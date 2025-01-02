@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/images/logo1_800x89-removebg-preview.png" />
+  <title> Sign-Up Page</title>
+  <link rel="stylesheet" href="./signup.css">
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <img src="./images/logo-removebg-preview.png" alt="logo-img">
+    </nav>
+    <div class="signup-page">
+      <div class="sign-std-page">
+        <img class="std-img" src="./images/admin-loginpage-logo.png" alt="std.img">
+        <h1>Sign-Up as Student</h1>
+        <input class="js-signup-s-crn" type="text" placeholder="Enter University Roll No.">
+        <input class="js-signup-s-email" type="text" placeholder="Enter Email">
+        <input class="js-signup-s-password" type="password" placeholder="Enter Password">
+        <button class="signup-s-btn js-signup-s-button" onclick="alert('Sign-Up successful')">Sign-Up</button>
+        <button class="switch-s">Sign-Up as Admin</button>
+        <p>Already Have an Account? <a href="login.html">Log In</a></p>
+      </div>
+      <div class="sign-ad-page admin-hidden">
+        <img class="admin-img" src="./images/std-loginpage-logo.png" alt="admin.img">
+        <h1>Sign-Up as Admin</h1>
+        <input class="js-signup-a-name" type="text" placeholder="Enter Name">
+        <input class="js-signup-a-email" type="text" placeholder="Enter Email ID">
+        <input class="js-signup-a-password" type="password" placeholder="Enter Password">
+        <button class="signup-a-btn js-signup-a-button" onclick="alert('Sign-Up successful')">Sign-Up</button>
+        <button class="switch-a">Sign-Up as Student</button>
+        <p>Already Have an Account? <a href="login.html">Log In</a></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const std = document.querySelector('.sign-std-page');
+    const ad = document.querySelector('.sign-ad-page');
+
+    document.querySelector('.switch-s').addEventListener(('click'), () => {
+      std.classList.add('student-hidden');
+      ad.classList.remove('admin-hidden')
+    });
+
+    document.querySelector('.switch-a').addEventListener(('click'), () => {
+      std.classList.remove('student-hidden');
+      ad.classList.add('admin-hidden')
+    });
+  </script>
+  <script src="signup.js" type="module"></script>
+
+</html>
